@@ -24,6 +24,7 @@ sudo nano /etc/apache2/sites-available/jenkins.conf
     ServerName your_server_domain_or_ip
 
     ProxyPass / http://localhost:8080/
+    RequestHeader set X-Forwarded-proto "https"
     ProxyPassReverse / http://localhost:8080/
 
     ErrorLog ${APACHE_LOG_DIR}/jenkins-error.log
